@@ -14,3 +14,14 @@ export const five_pages = () => ({
   />
 `
 })
+
+export const twenty_pages = () => ({
+  components: { paginator },
+  template: `
+  <paginator
+    initialPage = 1
+    pageCount = 20
+    initialPageSize = 10
+  />
+`
+})
