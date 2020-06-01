@@ -1,23 +1,38 @@
 <template>
   <div>
     <div class="center mt-3 row hide-on-med-and-down valign-wrapper" style="justify-content: center;">
-      <label class="hide-on-med-and-down">{{pageSizeText}}</label>
+      <label class="hide-on-med-and-down">
+        {{pageSizeText}}
+      </label>
       <div class="col-lg-2">
-        <label class="hide-on-large-only">{{pageSizeText}}</label>
-        <select ref='pageSizeSelect' v-model="pageSize" id="desk-page-size">
-          <option v-for="value in values" :key=value value="value">{{value}}</option>
+        <label class="hide-on-large-only">
+          {{pageSizeText}}
+        </label>
+        <select ref='pageSizeSelect' v-model="pageSize">
+          <option
+            v-for="value in values"
+            :key=value value="value">
+            {{value}}
+          </option>
         </select>
       </div>
       <div>
-        <ul class="pagination paginator mt-3 my-lg-auto" id="desk-paginator">
+        <ul class="pagination paginator mt-3 my-lg-auto">
           <li :class="previous===0 ? 'disabled' :''">
-            <a @click="currentPage>1? currentPage--:null" :data-page="previous===0 ? '' : previous"><i class="material-icons">chevron_left</i></a>
+            <a @click="decreasePage">
+              <i class="material-icons">chevron_left</i>
+            </a>
           </li>
-          <li v-for="pageNumber in pages" :key="pageNumber" :class="pageNumber == parseInt(currentPage,10) ? 'active amber darken-2' : ''">
-            <a @click="currentPage = pageNumber" :data-page="pageNumber">{{pageNumber}}</a>
+          <li
+            v-for="pageNumber in pages"
+            :key="pageNumber"
+            :class="pageNumber == parseInt(currentPage,10) ? 'active amber darken-2' : ''">
+            <a @click="currentPage = pageNumber">{{pageNumber}}</a>
           </li>
           <li :class="parseInt(currentPage,10) == parseInt(pageCount,10) ? 'disabled' :''">
-           <a @click="currentPage++" :data-page="parseInt(currentPage,10) == parseInt(pageCount,10)? '' :nextpage"><i class="material-icons">chevron_right</i></a>
+            <a @click="increasePage">
+              <i class="material-icons">chevron_right</i>
+            </a>
           </li>
         </ul>
       </div>
@@ -56,6 +71,18 @@
       let select = M.FormSelect.init(this.$refs.pageSizeSelect, options)
       select.input.classList.add('select-input')
     },
+    methods: {
+      decreasePage: function(){
+        if(this.currentPage > 1){
+          this.currentPage--
+        }
+      },
+      increasePage: function(){
+        if(this.currentPage < this.pageCount){
+          this.currentPage++
+        }
+      }
+    },
     computed: {
       previous: function(){
         return parseInt(this.currentPage,10)-1
@@ -70,7 +97,12 @@
         return Math.min(this.pageCount, parseInt(this.currentPage,10)+5);
       },
       pages: function(){
-        return Array.from(new Array(this.upperBoundary - this.lowerBoundary + 1), (x,i) => i + this.lowerBoundary)
+        return Array.from(
+          new Array(
+            this.upperBoundary - this.lowerBoundary + 1
+          ),
+          (x,i) => i + this.lowerBoundary
+        )
       }
     }
   }
