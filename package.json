@@ -1,0 +1,21 @@
+{
+  "name": "vue-dynamic-table",
+  "version": "1.0.0",
+  "description": "A table front-end plugin for your api with support to all CRUD operations",
+  "private": true,
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidmoseler/vue-dynamic-table.git"
+  },
+  "author": "David Moseler",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^1.0.0",
+    "vue": "^2.6.11"
+  }
+}
