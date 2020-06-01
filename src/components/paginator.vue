@@ -84,12 +84,6 @@
       }
     },
     computed: {
-      previous: function(){
-        return this.currentPage-1
-      },
-      nextpage: function(){
-        return this.currentPage+1
-      },
       lowerBoundary: function(){
         return Math.max(
           1,
@@ -122,7 +116,7 @@
 
 <style>
   .pagination li a {
-    padding: 0 15px;
+    padding: 0 15px
   }
   .paginator {
     display: flex;
@@ -139,5 +133,8 @@
   }
   label {
     padding-right: 15px
+  }
+  a {
+    cursor: pointer;
   }
 </style>
