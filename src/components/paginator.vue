@@ -31,7 +31,12 @@
   import 'material-design-icons/iconfont/material-icons.css'
 
   export default {
-    props: ['initialPage', 'pageCount', 'initialPageSize'],
+    props: [
+      'initialPage',
+      'pageCount',
+      'initialPageSize',
+      'pageSizeText'
+    ],
     data: function(){
       return {
         currentPage: this.initialPage,
@@ -45,7 +50,11 @@
       }
     },
     mounted: function(){
-      M.FormSelect.init(this.$refs.pageSizeSelect);
+      let options = {
+        'classes': 'page-size-select'
+      }
+      let select = M.FormSelect.init(this.$refs.pageSizeSelect, options)
+      select.input.classList.add('select-input')
     },
     computed: {
       previous: function(){
@@ -76,12 +85,15 @@
     align-items: center;
     justify-content: center;
   }
-  .material-icons.md-18 { font-size: 18px; }
-  .material-icons.md-22 { font-size: 22px; }
-  .material-icons.md-24 { font-size: 24px; }
-  .material-icons.md-36 { font-size: 36px; }
-  .material-icons.md-48 { font-size: 48px; }
-  .material-icons.red-color {color: rgb(255, 0, 0) }
-  .material-icons.blue-color {color:rgb(0, 174, 255) }
-  .material-icons.red1 { color: rgba(251, 0, 0, 0.959); }
+  .page-size-select {
+    width: 40px
+  }
+  .select-input {
+    position: relative;
+    right: 20px;
+    padding-left: 17px !important
+  }
+  label {
+    padding-right: 15px
+  }
 </style>
