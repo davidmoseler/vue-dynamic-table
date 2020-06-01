@@ -3,6 +3,7 @@
     initialPage = 1
     pageCount = 5
     initialPageSize = 10
+    pageSizeText = 'Items per page'
   />
 </template>
 

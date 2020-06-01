@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="center mt-3 row hide-on-med-and-down valign-wrapper" style="justify-content: center;">
-      <label class="hide-on-med-and-down">itens por página</label>
+      <label class="hide-on-med-and-down">{{pageSizeText}}</label>
       <div class="col-lg-2">
-        <label class="hide-on-large-only">itens por página</label>
-        <select ref='pageSizeSelect' v-model="pageSize" class="select2-container paginator-page-size" id="desk-page-size">
+        <label class="hide-on-large-only">{{pageSizeText}}</label>
+        <select ref='pageSizeSelect' v-model="pageSize" id="desk-page-size">
           <option v-for="value in values" :key=value value="value">{{value}}</option>
         </select>
       </div>
