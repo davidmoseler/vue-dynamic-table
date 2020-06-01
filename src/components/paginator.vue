@@ -4,7 +4,7 @@
       <label class="hide-on-med-and-down">itens por página</label>
       <div class="col-lg-2">
         <label class="hide-on-large-only">itens por página</label>
-        <select v-model="pageSize" class="select2-container paginator-page-size" id="desk-page-size">
+        <select ref='pageSizeSelect' v-model="pageSize" class="select2-container paginator-page-size" id="desk-page-size">
           <option v-for="value in values" :key=value value="value">{{value}}</option>
         </select>
       </div>
@@ -43,8 +43,7 @@
       }
     },
     mounted: function(){
-      var elems = document.querySelectorAll('select');
-      M.FormSelect.init(elems);
+      M.FormSelect.init(this.$refs.pageSizeSelect);
     },
     computed: {
       previous: function(){
