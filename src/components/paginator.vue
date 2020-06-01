@@ -1,41 +1,39 @@
 <template>
-  <div>
-    <div class="center mt-3 row valign-wrapper" style="justify-content: center;">
-      <label class="hide-on-med-and-down">
+  <div id="paginator" class="valign-wrapper">
+    <label class="hide-on-med-and-down">
+      {{pageSizeText}}
+    </label>
+    <div class="col-lg-2">
+      <label class="hide-on-large-only">
         {{pageSizeText}}
       </label>
-      <div class="col-lg-2">
-        <label class="hide-on-large-only">
-          {{pageSizeText}}
-        </label>
-        <select ref='pageSizeSelect' v-model="pageSize">
-          <option
-            v-for="value in values"
-            :key=value value="value">
-            {{value}}
-          </option>
-        </select>
-      </div>
-      <div>
-        <ul class="pagination paginator mt-3 my-lg-auto">
-          <li :class="{disabled: currentPage == 1}">
-            <a @click="decreasePage">
-              <i class="material-icons">chevron_left</i>
-            </a>
-          </li>
-          <li
-            v-for="pageNumber in pages"
-            :key="pageNumber"
-            :class="pageNumber == parseInt(currentPage,10) ? 'active light-green darken-2' : ''">
-            <a @click="currentPage = pageNumber">{{pageNumber}}</a>
-          </li>
-          <li :class="{disabled: currentPage == pageCount}">
-            <a @click="increasePage">
-              <i class="material-icons">chevron_right</i>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <select ref='pageSizeSelect' v-model="pageSize">
+        <option
+          v-for="value in values"
+          :key=value value="value">
+          {{value}}
+        </option>
+      </select>
+    </div>
+    <div>
+      <ul class="pagination paginator mt-3 my-lg-auto">
+        <li :class="{disabled: currentPage == 1}">
+          <a @click="decreasePage">
+            <i class="material-icons">chevron_left</i>
+          </a>
+        </li>
+        <li
+          v-for="pageNumber in pages"
+          :key="pageNumber"
+          :class="{'active light-green darken-2' : pageNumber == currentPage}">
+          <a @click="currentPage = pageNumber">{{pageNumber}}</a>
+        </li>
+        <li :class="{disabled: currentPage == pageCount}">
+          <a @click="increasePage">
+            <i class="material-icons">chevron_right</i>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -70,6 +68,7 @@
       }
       let select = M.FormSelect.init(this.$refs.pageSizeSelect, options)
       select.input.classList.add('select-input')
+      select.input.value = this.pageSize
     },
     methods: {
       decreasePage: function(){
@@ -115,8 +114,11 @@
 </script>
 
 <style>
+  #paginator {
+    justify-content: center;
+  }
   .pagination li a {
-    padding: 0 15px
+    padding: 0 15px;
   }
   .paginator {
     display: flex;
