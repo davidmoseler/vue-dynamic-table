@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="center mt-3 row hide-on-med-and-down valign-wrapper" style="justify-content: center;">
+    <div class="center mt-3 row valign-wrapper" style="justify-content: center;">
       <label class="hide-on-med-and-down">
         {{pageSizeText}}
       </label>
@@ -18,7 +18,7 @@
       </div>
       <div>
         <ul class="pagination paginator mt-3 my-lg-auto">
-          <li :class="previous===0 ? 'disabled' :''">
+          <li :class="{disabled: currentPage == 1}">
             <a @click="decreasePage">
               <i class="material-icons">chevron_left</i>
             </a>
@@ -26,10 +26,10 @@
           <li
             v-for="pageNumber in pages"
             :key="pageNumber"
-            :class="pageNumber == parseInt(currentPage,10) ? 'active amber darken-2' : ''">
+            :class="pageNumber == parseInt(currentPage,10) ? 'active light-green darken-2' : ''">
             <a @click="currentPage = pageNumber">{{pageNumber}}</a>
           </li>
-          <li :class="parseInt(currentPage,10) == parseInt(pageCount,10) ? 'disabled' :''">
+          <li :class="{disabled: currentPage == pageCount}">
             <a @click="increasePage">
               <i class="material-icons">chevron_right</i>
             </a>
@@ -85,16 +85,28 @@
     },
     computed: {
       previous: function(){
-        return parseInt(this.currentPage,10)-1
+        return this.currentPage-1
       },
       nextpage: function(){
-        return parseInt(this.currentPage,10)+1
+        return this.currentPage+1
       },
       lowerBoundary: function(){
-        return Math.max(1, parseInt(this.currentPage,10)-5)
+        return Math.max(
+          1,
+          Math.min(
+            this.currentPage-3,
+            this.pageCount-7
+          )
+        )
       },
       upperBoundary: function(){
-        return Math.min(this.pageCount, parseInt(this.currentPage,10)+5);
+        return Math.min(
+          this.pageCount,
+          Math.max(
+            this.currentPage+3,
+            7
+          )
+        )
       },
       pages: function(){
         return Array.from(
