@@ -66,9 +66,7 @@
       let options = {
         'classes': 'page-size-select'
       }
-      let select = M.FormSelect.init(this.$refs.pageSizeSelect, options)
-      select.input.classList.add('select-input')
-      select.input.value = this.pageSize
+      M.FormSelect.init(this.$refs.pageSizeSelect, options)
     },
     methods: {
       decreasePage: function(){
