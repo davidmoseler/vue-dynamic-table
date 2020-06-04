@@ -20,7 +20,10 @@
   export default {
     props: ['open', 'title', 'close_text', 'type'],
     mounted: function(){
-      Modal.init(this.$el)
+      var instance = Modal.init(this.$el)
+      if(this.open){
+        instance.open()
+      }
     },
     computed: {
       modalClass: function(){
