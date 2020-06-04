@@ -88,7 +88,7 @@
           1,
           Math.min(
             this.currentPage-3,
-            this.pageCount-7
+            this.pageCount-6
           )
         )
       },
