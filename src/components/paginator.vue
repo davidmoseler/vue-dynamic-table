@@ -7,7 +7,7 @@
       <label class="hide-on-large-only">
         {{pageSizeText}}
       </label>
-      <select ref='pageSizeSelect' v-model="pageSize">
+      <select class='browser-default' ref='pageSizeSelect' v-model="pageSize">
         <option
           v-for="value in values"
           :key=value value="value">
@@ -124,14 +124,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .page-size-select {
-    width: 40px
-  }
-  .select-input {
-    position: relative;
-    right: 20px;
-    padding-left: 17px !important
   }
   label {
     padding-right: 15px
