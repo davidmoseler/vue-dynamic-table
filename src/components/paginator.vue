@@ -117,8 +117,8 @@
   #paginator {
     justify-content: center;
   }
-  .pagination li a {
-    padding: 0 15px;
+  .pagination li {
+    width: 40px;
   }
   .paginator {
     display: flex;
