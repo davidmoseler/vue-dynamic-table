@@ -58,3 +58,18 @@
     }
   }
 </script>
+
+<style>
+  .short-modal{
+    height: auto;
+  }
+
+  .short-modal p {
+    font-size: 18px;
+  }
+
+  #modal-motivos .header{
+    font-weight: bold;
+    font-size: 25px;
+  }
+</style>
