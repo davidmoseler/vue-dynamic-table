@@ -3,12 +3,12 @@
     <div class="modal-content">
       <h4>{{ title }}</h4>
       <div>
-        <slot name="content"></slot>
+        <slot/>
       </div>
     </div>
     <div class="modal-footer">
       <a @click="closeModal" class="btn btn-flat">{{close_text}}</a>
-      <slot name="additional_buttons"></slot>
+      <slot name="additional_buttons"/>
     </div>
   </div>
 </template>
