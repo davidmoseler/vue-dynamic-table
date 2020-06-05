@@ -7,29 +7,26 @@ export default {
 export const white = () => ({
   components: { btn },
   template: `
-    <btn
-      text='Click here'
-      color='white'
-    />
+    <btn color='white'>
+      Click here
+    </btn>
   `
 })
 
 export const amber = () => ({
   components: { btn },
   template: `
-    <btn
-      text='Click here'
-      color='amber'
-    />
+    <btn color='amber'>
+      Click here
+    </btn>
   `
 })
 
 export const red = () => ({
   components: { btn },
   template: `
-    <btn
-      text='Click here'
-      color='red'
-    />
+    <btn color='red'>
+      Click here
+    </btn>
   `
 })

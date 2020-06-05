@@ -4,7 +4,7 @@
     :class='[color, textColor]'
     @click="$emit('click', $event)"
   >
-    {{text}}
+    <slot/>
   </a>
 </template>
 
@@ -13,7 +13,7 @@
   import 'materialize-css/dist/css/materialize.css'
 
   export default {
-    props: ['text', 'color'],
+    props: ['color'],
     computed: {
       textColor: function(){
         if(this.color == 'white'){
