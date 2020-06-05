@@ -10,7 +10,8 @@
       <select class='browser-default' ref='pageSizeSelect' v-model="pageSize">
         <option
           v-for="value in values"
-          :key=value value="value">
+          :selected="value == initialPageSize"
+          :key=value :value="value">
           {{value}}
         </option>
       </select>
