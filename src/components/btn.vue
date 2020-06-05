@@ -1,6 +1,6 @@
 <template>
   <a
-    class="btn btn-sec btn-rounded"
+    class="btn"
     :class='[color, textColor]'
     @click="$emit('click', $event)"
   >
@@ -9,7 +9,6 @@
 </template>
 
 <script>
-  import 'materialize-css'
   import 'materialize-css/dist/css/materialize.css'
 
   export default {
@@ -29,18 +28,7 @@
 <style>
   .btn{
     text-transform: uppercase;
-  }
-
-  .btn-sec {
-    color: darkgrey;
     font-weight: bold;
-    font-size: 14px;
-    border: solid 1px;
-    border-color: lightgray;
-    background-color: white;
-  }
-
-  .btn-rounded {
     border-radius: 50px!important
   }
 </style>
