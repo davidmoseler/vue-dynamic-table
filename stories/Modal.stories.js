@@ -1,11 +1,12 @@
 import modal from '../src/components/modal';
+import btn from '../src/components/btn';
 
 export default {
   title: 'Modal'
 };
 
 export const fixed_footer = () => ({
-  components: { modal },
+  components: { modal, btn },
   template: `
     <modal
       :open=true
@@ -13,12 +14,15 @@ export const fixed_footer = () => ({
       close_text='Cancel'
     >
       <p> A paragraph. </p>
+      <template slot='additional_buttons'>
+        <btn text='Ok!' color='amber'>
+      </template>
     </modal>
   `
 })
 
 export const short = () => ({
-  components: { modal },
+  components: { modal, btn },
   template: `
     <modal
       :open=true
@@ -27,12 +31,15 @@ export const short = () => ({
       type='short'
     >
       <p> A paragraph. </p>
+      <template slot='additional_buttons'>
+        <btn text='Ok!' color='amber'>
+      </template>
     </modal>
   `
 })
 
 export const bottom = () => ({
-  components: { modal },
+  components: { modal, btn },
   template: `
     <modal
       :open=true
@@ -41,6 +48,9 @@ export const bottom = () => ({
       type='bottom'
     >
       <p> A paragraph. </p>
+      <template slot='additional_buttons'>
+        <btn text='Ok!' color='amber'>
+      </template>
     </modal>
   `
 })
