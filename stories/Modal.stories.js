@@ -15,7 +15,9 @@ export const fixed_footer = () => ({
     >
       <p> A paragraph. </p>
       <template slot='additional_buttons'>
-        <btn text='Ok!' color='amber'>
+        <btn color='amber'>
+          Ok!
+        </btn>
       </template>
     </modal>
   `
@@ -32,7 +34,9 @@ export const short = () => ({
     >
       <p> A paragraph. </p>
       <template slot='additional_buttons'>
-        <btn text='Ok!' color='amber'>
+        <btn color='amber'>
+          Ok!
+        </btn>
       </template>
     </modal>
   `
@@ -49,7 +53,9 @@ export const bottom = () => ({
     >
       <p> A paragraph. </p>
       <template slot='additional_buttons'>
-        <btn text='Ok!' color='amber'>
+        <btn color='amber'>
+          Ok!
+        </btn>
       </template>
     </modal>
   `
