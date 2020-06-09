@@ -8,13 +8,13 @@
 </template>
 
 <script>
-  import paginator from './src/components/paginator'
-  import 'materialize-css/dist/css/materialize.css'
-  import 'material-design-icons/iconfont/material-icons.css'
+import paginator from './components/paginator.vue';
+import 'materialize-css/dist/css/materialize.css';
+import 'material-design-icons/iconfont/material-icons.css';
 
-  export default {
-    components: {
-      paginator
-    }
-  }
+export default {
+  components: {
+    paginator,
+  },
+};
 </script>

@@ -9,18 +9,17 @@
 </template>
 
 <script>
-  export default {
-    props: ['color'],
-    computed: {
-      textColor: function(){
-        if(this.color == 'white'){
-          return 'grey-text'
-        } else {
-          return 'white-text'
-        }
+export default {
+  props: ['color'],
+  computed: {
+    textColor() {
+      if (this.color == 'white') {
+        return 'grey-text';
       }
-    }
-  }
+      return 'white-text';
+    },
+  },
+};
 </script>
 
 <style>

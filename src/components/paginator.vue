@@ -40,74 +40,74 @@
 </template>
 
 <script>
-  import M from 'materialize-css'
+import M from 'materialize-css';
 
-  export default {
-    props: [
-      'initialPage',
-      'pageCount',
-      'initialPageSize',
-      'pageSizeText'
-    ],
-    data: function(){
-      return {
-        currentPage: this.initialPage,
-        pageSize: this.initialPageSize,
-        values: [
-          10,
-          20,
-          50,
-          100
-        ]
+export default {
+  props: [
+    'initialPage',
+    'pageCount',
+    'initialPageSize',
+    'pageSizeText',
+  ],
+  data() {
+    return {
+      currentPage: this.initialPage,
+      pageSize: this.initialPageSize,
+      values: [
+        10,
+        20,
+        50,
+        100,
+      ],
+    };
+  },
+  mounted() {
+    const options = {
+      classes: 'page-size-select',
+    };
+    M.FormSelect.init(this.$refs.pageSizeSelect, options);
+  },
+  methods: {
+    decreasePage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
       }
     },
-    mounted: function(){
-      let options = {
-        'classes': 'page-size-select'
-      }
-      M.FormSelect.init(this.$refs.pageSizeSelect, options)
-    },
-    methods: {
-      decreasePage: function(){
-        if(this.currentPage > 1){
-          this.currentPage--
-        }
-      },
-      increasePage: function(){
-        if(this.currentPage < this.pageCount){
-          this.currentPage++
-        }
+    increasePage() {
+      if (this.currentPage < this.pageCount) {
+        this.currentPage++;
       }
     },
-    computed: {
-      lowerBoundary: function(){
-        return Math.max(
-          1,
-          Math.min(
-            this.currentPage-3,
-            this.pageCount-6
-          )
-        )
-      },
-      upperBoundary: function(){
-        return Math.min(
-          this.pageCount,
-          Math.max(
-            this.currentPage+3,
-            7
-          )
-        )
-      },
-      pages: function(){
-        return Array.from(
-          new Array(
-            this.upperBoundary - this.lowerBoundary + 1
-          ),
-          (x,i) => i + this.lowerBoundary
-        )
-      }
-    }
-  }
+  },
+  computed: {
+    lowerBoundary() {
+      return Math.max(
+        1,
+        Math.min(
+          this.currentPage - 3,
+          this.pageCount - 6,
+        ),
+      );
+    },
+    upperBoundary() {
+      return Math.min(
+        this.pageCount,
+        Math.max(
+          this.currentPage + 3,
+          7,
+        ),
+      );
+    },
+    pages() {
+      return Array.from(
+        new Array(
+          this.upperBoundary - this.lowerBoundary + 1,
+        ),
+        (x, i) => i + this.lowerBoundary,
+      );
+    },
+  },
+};
 </script>
 
 <style>

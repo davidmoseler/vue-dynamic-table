@@ -14,48 +14,47 @@
 </template>
 
 <script>
-  import {Modal} from 'materialize-css'
+import { Modal } from 'materialize-css';
 
-  export default {
-    props: ['open', 'title', 'close_text', 'type'],
-    mounted: function(){
-      var instance = Modal.init(this.$el)
-      if(this.open){
-        instance.open()
-      }
-    },
-    computed: {
-      modalClass: function(){
-        if(this.type=='short'){
-          return 'short-modal'
-        } else if (this.type=='bottom'){
-          return 'bottom-sheet'
-        } else {
-          return 'modal-fixed-footer'
-        }
-      }
-    },
-    methods: {
-      focusout: function(event){
-        if (!event.currentTarget.contains(event.relatedTarget)) {
-          this.closeModal()
-        }
-      },
-      closeModal: function(){
-        this.$emit('update:open', false)
-      }
-    },
-    watch: {
-      open: function(value){
-        var instance = Modal.getInstance(this.$el);
-        if(value){
-          instance.open()
-        } else {
-          instance.close()
-        }
-      }
+export default {
+  props: ['open', 'title', 'close_text', 'type'],
+  mounted() {
+    const instance = Modal.init(this.$el);
+    if (this.open) {
+      instance.open();
     }
-  }
+  },
+  computed: {
+    modalClass() {
+      if (this.type == 'short') {
+        return 'short-modal';
+      } if (this.type == 'bottom') {
+        return 'bottom-sheet';
+      }
+      return 'modal-fixed-footer';
+    },
+  },
+  methods: {
+    focusout(event) {
+      if (!event.currentTarget.contains(event.relatedTarget)) {
+        this.closeModal();
+      }
+    },
+    closeModal() {
+      this.$emit('update:open', false);
+    },
+  },
+  watch: {
+    open(value) {
+      const instance = Modal.getInstance(this.$el);
+      if (value) {
+        instance.open();
+      } else {
+        instance.close();
+      }
+    },
+  },
+};
 </script>
 
 <style>

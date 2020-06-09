@@ -1,7 +1,7 @@
 import paginator from '../components/paginator';
 
 export default {
-  title: 'Paginator'
+  title: 'Paginator',
 };
 
 export const five_pages = () => ({
@@ -13,8 +13,8 @@ export const five_pages = () => ({
     initialPageSize = 10
     pageSizeText = "Items per page"
   />
-`
-})
+`,
+});
 
 export const twenty_pages = () => ({
   components: { paginator },
@@ -25,5 +25,5 @@ export const twenty_pages = () => ({
     initialPageSize = 10
     pageSizeText = "Items per page"
   />
-`
-})
+`,
+});

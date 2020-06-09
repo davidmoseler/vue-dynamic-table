@@ -2,7 +2,7 @@ import modal from '../components/modal';
 import btn from '../components/btn';
 
 export default {
-  title: 'Modal'
+  title: 'Modal',
 };
 
 export const fixed_footer = () => ({
@@ -20,8 +20,8 @@ export const fixed_footer = () => ({
         </btn>
       </template>
     </modal>
-  `
-})
+  `,
+});
 
 export const short = () => ({
   components: { modal, btn },
@@ -39,8 +39,8 @@ export const short = () => ({
         </btn>
       </template>
     </modal>
-  `
-})
+  `,
+});
 
 export const bottom = () => ({
   components: { modal, btn },
@@ -58,5 +58,5 @@ export const bottom = () => ({
         </btn>
       </template>
     </modal>
-  `
-})
+  `,
+});
