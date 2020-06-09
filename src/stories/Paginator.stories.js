@@ -1,4 +1,4 @@
-import paginator from '../src/components/paginator';
+import paginator from '../components/paginator';
 
 export default {
   title: 'Paginator'

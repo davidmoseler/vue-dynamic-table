@@ -1,5 +1,5 @@
-import modal from '../src/components/modal';
-import btn from '../src/components/btn';
+import modal from '../components/modal';
+import btn from '../components/btn';
 
 export default {
   title: 'Modal'
