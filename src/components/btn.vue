@@ -9,8 +9,6 @@
 </template>
 
 <script>
-  import 'materialize-css/dist/css/materialize.css'
-
   export default {
     props: ['color'],
     computed: {

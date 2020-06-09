@@ -15,7 +15,6 @@
 
 <script>
   import {Modal} from 'materialize-css'
-  import 'materialize-css/dist/css/materialize.css'
 
   export default {
     props: ['open', 'title', 'close_text', 'type'],

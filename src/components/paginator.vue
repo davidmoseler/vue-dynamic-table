@@ -41,8 +41,6 @@
 
 <script>
   import M from 'materialize-css'
-  import 'materialize-css/dist/css/materialize.css'
-  import 'material-design-icons/iconfont/material-icons.css'
 
   export default {
     props: [
