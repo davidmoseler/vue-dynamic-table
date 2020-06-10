@@ -1,9 +1,9 @@
 <template>
   <paginator
-    :initialPage = 1
-    pageCount = 20
-    initialPageSize = 10
-    pageSizeText = 'Items per page'
+    :initial-page="1"
+    page-count="20"
+    initial-page-size="10"
+    page-size-text="Items per page"
   />
 </template>
 

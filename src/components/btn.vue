@@ -1,10 +1,10 @@
 <template>
   <a
     class="btn"
-    :class='[color, textColor]'
+    :class="[color, textColor]"
     @click="$emit('click', $event)"
   >
-    <slot/>
+    <slot />
   </a>
 </template>
 

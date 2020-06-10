@@ -1,18 +1,27 @@
 <template>
-  <div id="paginator" class="valign-wrapper">
+  <div
+    id="paginator"
+    class="valign-wrapper"
+  >
     <label class="hide-on-med-and-down">
-      {{pageSizeText}}
+      {{ pageSizeText }}
     </label>
     <div class="col-lg-2">
       <label class="hide-on-large-only">
-        {{pageSizeText}}
+        {{ pageSizeText }}
       </label>
-      <select class='browser-default' ref='pageSizeSelect' v-model="pageSize">
+      <select
+        ref="pageSizeSelect"
+        v-model="pageSize"
+        class="browser-default"
+      >
         <option
           v-for="value in values"
+          :key="value"
           :selected="value == initialPageSize"
-          :key=value :value="value">
-          {{value}}
+          :value="value"
+        >
+          {{ value }}
         </option>
       </select>
     </div>
@@ -26,8 +35,9 @@
         <li
           v-for="pageNumber in pages"
           :key="pageNumber"
-          :class="{'active light-green darken-2' : pageNumber == currentPage}">
-          <a @click="currentPage = pageNumber">{{pageNumber}}</a>
+          :class="{'active light-green darken-2' : pageNumber == currentPage}"
+        >
+          <a @click="currentPage = pageNumber">{{ pageNumber }}</a>
         </li>
         <li :class="{disabled: currentPage == pageCount}">
           <a @click="increasePage">
@@ -61,24 +71,6 @@ export default {
       ],
     };
   },
-  mounted() {
-    const options = {
-      classes: 'page-size-select',
-    };
-    M.FormSelect.init(this.$refs.pageSizeSelect, options);
-  },
-  methods: {
-    decreasePage() {
-      if (this.currentPage > 1) {
-        this.currentPage--;
-      }
-    },
-    increasePage() {
-      if (this.currentPage < this.pageCount) {
-        this.currentPage++;
-      }
-    },
-  },
   computed: {
     lowerBoundary() {
       return Math.max(
@@ -105,6 +97,24 @@ export default {
         ),
         (x, i) => i + this.lowerBoundary,
       );
+    },
+  },
+  mounted() {
+    const options = {
+      classes: 'page-size-select',
+    };
+    M.FormSelect.init(this.$refs.pageSizeSelect, options);
+  },
+  methods: {
+    decreasePage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    },
+    increasePage() {
+      if (this.currentPage < this.pageCount) {
+        this.currentPage++;
+      }
     },
   },
 };
