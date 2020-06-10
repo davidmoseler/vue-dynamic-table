@@ -110,7 +110,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   #paginator {
     justify-content: center;
   }

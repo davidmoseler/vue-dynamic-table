@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .btn{
     text-transform: uppercase;
     font-weight: bold;
