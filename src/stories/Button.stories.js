@@ -1,7 +1,7 @@
 import btn from '../components/btn.vue';
 
 export default {
-  title: 'Button',
+  title: 'Button'
 };
 
 export const white = () => ({
@@ -10,7 +10,7 @@ export const white = () => ({
     <btn color='white'>
       Click here
     </btn>
-  `,
+  `
 });
 
 export const amber = () => ({
@@ -19,7 +19,7 @@ export const amber = () => ({
     <btn color='amber'>
       Click here
     </btn>
-  `,
+  `
 });
 
 export const red = () => ({
@@ -28,5 +28,5 @@ export const red = () => ({
     <btn color='red'>
       Click here
     </btn>
-  `,
+  `
 });

@@ -2,7 +2,7 @@ import modal from '../components/modal.vue';
 import btn from '../components/btn.vue';
 
 export default {
-  title: 'Modal',
+  title: 'Modal'
 };
 
 export const fixedFooter = () => ({
@@ -20,7 +20,7 @@ export const fixedFooter = () => ({
         </btn>
       </template>
     </modal>
-  `,
+  `
 });
 
 export const short = () => ({
@@ -39,7 +39,7 @@ export const short = () => ({
         </btn>
       </template>
     </modal>
-  `,
+  `
 });
 
 export const bottom = () => ({
@@ -58,5 +58,5 @@ export const bottom = () => ({
         </btn>
       </template>
     </modal>
-  `,
+  `
 });

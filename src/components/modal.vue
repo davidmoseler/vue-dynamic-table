@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="modal"
-    :class="modalClass"
-    @focusout="focusout($event)"
-  >
+  <div class="modal" :class="modalClass" @focusout="focusout($event)">
     <div class="modal-content">
       <h4>{{ title }}</h4>
       <div>
@@ -11,10 +7,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <a
-        class="btn btn-flat"
-        @click="closeModal"
-      >{{ close_text }}</a>
+      <a class="btn btn-flat" @click="closeModal">{{ close_text }}</a>
       <slot name="additional_buttons" />
     </div>
   </div>
@@ -29,11 +22,12 @@ export default {
     modalClass() {
       if (this.type == 'short') {
         return 'short-modal';
-      } if (this.type == 'bottom') {
+      }
+      if (this.type == 'bottom') {
         return 'bottom-sheet';
       }
       return 'modal-fixed-footer';
-    },
+    }
   },
   watch: {
     open(value) {
@@ -43,7 +37,7 @@ export default {
       } else {
         instance.close();
       }
-    },
+    }
   },
   mounted() {
     const instance = Modal.init(this.$el);
@@ -59,22 +53,22 @@ export default {
     },
     closeModal() {
       this.$emit('update:open', false);
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
-  .short-modal{
-    height: auto;
-  }
+.short-modal {
+  height: auto;
+}
 
-  .short-modal p {
-    font-size: 18px;
-  }
+.short-modal p {
+  font-size: 18px;
+}
 
-  #modal-motivos .header{
-    font-weight: bold;
-    font-size: 25px;
-  }
+#modal-motivos .header {
+  font-weight: bold;
+  font-size: 25px;
+}
 </style>

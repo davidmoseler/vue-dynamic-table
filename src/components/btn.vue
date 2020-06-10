@@ -1,9 +1,5 @@
 <template>
-  <a
-    class="btn"
-    :class="[color, textColor]"
-    @click="$emit('click', $event)"
-  >
+  <a class="btn" :class="[color, textColor]" @click="$emit('click', $event)">
     <slot />
   </a>
 </template>
@@ -17,15 +13,15 @@ export default {
         return 'grey-text';
       }
       return 'white-text';
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
-  .btn{
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 50px!important
-  }
+.btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 50px !important;
+}
 </style>

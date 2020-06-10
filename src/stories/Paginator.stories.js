@@ -1,7 +1,7 @@
 import paginator from '../components/paginator.vue';
 
 export default {
-  title: 'Paginator',
+  title: 'Paginator'
 };
 
 export const fivePages = () => ({
@@ -13,7 +13,7 @@ export const fivePages = () => ({
     initialPageSize = 10
     pageSizeText = "Items per page"
   />
-`,
+`
 });
 
 export const twentyPages = () => ({
@@ -25,5 +25,5 @@ export const twentyPages = () => ({
     initialPageSize = 10
     pageSizeText = "Items per page"
   />
-`,
+`
 });
