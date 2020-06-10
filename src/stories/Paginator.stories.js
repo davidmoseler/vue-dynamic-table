@@ -1,10 +1,10 @@
-import paginator from '../components/paginator';
+import paginator from '../components/paginator.vue';
 
 export default {
   title: 'Paginator',
 };
 
-export const five_pages = () => ({
+export const fivePages = () => ({
   components: { paginator },
   template: `
   <paginator
@@ -16,7 +16,7 @@ export const five_pages = () => ({
 `,
 });
 
-export const twenty_pages = () => ({
+export const twentyPages = () => ({
   components: { paginator },
   template: `
   <paginator

@@ -1,11 +1,11 @@
-import modal from '../components/modal';
-import btn from '../components/btn';
+import modal from '../components/modal.vue';
+import btn from '../components/btn.vue';
 
 export default {
   title: 'Modal',
 };
 
-export const fixed_footer = () => ({
+export const fixedFooter = () => ({
   components: { modal, btn },
   template: `
     <modal
